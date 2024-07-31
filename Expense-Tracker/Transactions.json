@@ -1,0 +1,20 @@
+[
+  {
+    "TransactionId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "Amount": 100,
+    "CategoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "TransactionTime": "2024-07-30T13:15:44.729Z"
+  },
+  {
+    "TransactionId": "0490890d-5dd8-4841-a803-f5403096b370",
+    "Amount": 356,
+    "CategoryId": "d7b0ab39-28f4-4c2a-a26e-a9a11e68aed6",
+    "TransactionTime": "2024-07-31T09:12:24.264Z"
+  },
+  {
+    "TransactionId": "1dd75fcd-fb42-4260-a0ce-7b90bd69798c",
+    "Amount": 45000,
+    "CategoryId": "22aef787-2c8c-4085-9534-86d886cce4c0",
+    "TransactionTime": "2024-07-31T09:17:09.662Z"
+  }
+]

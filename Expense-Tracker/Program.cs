@@ -1,11 +1,31 @@
+using Expense_Tracker.Commands;
+using Expense_Tracker.Common;
+using Expense_Tracker.Constants;
+using Expense_Tracker.Mapper;
+using Expense_Tracker.Queries;
+using Expense_Tracker.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+
+builder.Services.AddAutoMapper(typeof(MapperProfile));
+
 // Add services to the container.
+builder.Services.AddTransient<ICommandHandler<AddTransactionCommand>, AddTransactionCommandHandler>();
+builder.Services.AddTransient<ICommandHandler<AddCategoryCommand>, AddCategoryCommandHandler>();
+builder.Services.AddTransient <IQueryHandler<TransactionsQuery, IEnumerable<Transaction>>, TransactionQueryHandler>();
+builder.Services.AddTransient<IQueryHandler<CategoriesQuery, IEnumerable<Category>>, CategoriesQueryHandler>();
+builder.Services.AddScoped<IDispatcher, Dispatcher>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+FilePaths.BasePath = app.Environment.ContentRootPath;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -13,32 +33,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.MapControllers();
 app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
