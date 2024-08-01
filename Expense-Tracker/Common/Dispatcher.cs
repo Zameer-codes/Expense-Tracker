@@ -8,23 +8,17 @@ namespace Expense_Tracker.Common
         {
             _serviceProvider = serviceProvider;
         }
-        public async Task<TResult> DispatchAsync<TResult>(IQuery<TResult> query)
+
+        public async Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
         {
-            var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TResult));
-            dynamic handler = _serviceProvider.GetRequiredService(handlerType);
-            return await handler.HandleAsync((dynamic)query);
+            var handler = _serviceProvider.GetRequiredService<IQueryHandler<TQuery, TResult>>();
+            return await handler.HandleAsync(query);
         }
 
         public async Task DispatchAsync<TCommand>(TCommand command) where TCommand : ICommand
         {
-            try
-            {
-                var handler = _serviceProvider.GetRequiredService<ICommandHandler<TCommand>>();
-                await handler.HandleAsync(command);
-            }
-            catch (Exception ex) {
-                throw;
-            }
+            var handler = _serviceProvider.GetRequiredService<ICommandHandler<TCommand>>();
+            await handler.HandleAsync(command);
         }
     }
 }

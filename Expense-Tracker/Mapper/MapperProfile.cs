@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Expense_Tracker.Commands;
-using Expense_Tracker.Queries;
+using Expense_Tracker.Models;
+using Expense_Tracker.Queries.Models;
 
 namespace Expense_Tracker.Mapper
 {
@@ -8,7 +9,9 @@ namespace Expense_Tracker.Mapper
     {
         public MapperProfile()
         {
-            CreateMap<AddCategoryCommand, Category>();
+            CreateMap<CategoryModel, CategoryQueryModel>();
+            CreateMap<AddCategoryCommand, CategoryModel>();
+            CreateMap<AddTransactionCommand, TransactionModel>();
         }
     }
 }

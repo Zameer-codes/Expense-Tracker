@@ -1,11 +1,5 @@
 [
   {
-    "CategoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "CategoryName": "Food",
-    "Type": "Expense",
-    "CreatedAt": "2024-07-31T06:08:29.367Z"
-  },
-  {
     "CategoryId": "d7b0ab39-28f4-4c2a-a26e-a9a11e68aed6",
     "CategoryName": "Travel",
     "Type": "Expense",

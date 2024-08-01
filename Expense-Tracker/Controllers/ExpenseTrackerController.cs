@@ -1,6 +1,7 @@
 ﻿using Expense_Tracker.Commands;
 using Expense_Tracker.Common;
 using Expense_Tracker.Queries;
+using Expense_Tracker.Queries.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +21,7 @@ namespace Expense_Tracker.Controllers
         public async Task<IActionResult> GetTransactions()
         {
             var query = new TransactionsQuery();
-            var transactions = await _dispatcher.DispatchAsync(query);
+            var transactions = await _dispatcher.DispatchAsync<TransactionsQuery, IEnumerable<TransactionQueryModel>>(query);
             return Ok(transactions);
         }
 
@@ -35,7 +36,7 @@ namespace Expense_Tracker.Controllers
         public async Task<IActionResult> GetCategories()
         {
             var query = new CategoriesQuery();
-            var categories = await _dispatcher.DispatchAsync(query);
+            var categories = await _dispatcher.DispatchAsync<CategoriesQuery, IEnumerable<CategoryQueryModel>>(query);
             return Ok(categories);
         }
         [HttpPost("category/add")]
@@ -43,6 +44,13 @@ namespace Expense_Tracker.Controllers
         {
             await _dispatcher.DispatchAsync(command);
             return CreatedAtAction(nameof(AddCategory), new { id = command.CategoryId });
+        }
+
+        [HttpDelete("category/delete")]
+        public async Task<IActionResult> DeleteCategoryById([FromBody] DeleteCategoryCommand command)
+        {
+            await _dispatcher.DispatchAsync(command);
+            return Ok();
         }
     }
 }
