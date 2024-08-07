@@ -25,6 +25,13 @@ builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowTracker",
+        policy => policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod()
+        );
+});
+
 var app = builder.Build();
 
 FilePaths.BasePath = app.Environment.ContentRootPath;
@@ -37,4 +44,5 @@ if (app.Environment.IsDevelopment())
 }
 app.MapControllers();
 app.UseHttpsRedirection();
+app.UseCors("AllowTracker");
 app.Run();

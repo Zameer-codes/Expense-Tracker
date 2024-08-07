@@ -1,20 +1,50 @@
 [
   {
-    "TransactionId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "Amount": 100,
-    "CategoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-    "TransactionTime": "2024-07-30T13:15:44.729Z"
-  },
-  {
-    "TransactionId": "0490890d-5dd8-4841-a803-f5403096b370",
-    "Amount": 356,
-    "CategoryId": "d7b0ab39-28f4-4c2a-a26e-a9a11e68aed6",
-    "TransactionTime": "2024-07-31T09:12:24.264Z"
-  },
-  {
-    "TransactionId": "1dd75fcd-fb42-4260-a0ce-7b90bd69798c",
-    "Amount": 45000,
+    "TransactionId": "5eaa39d9-f2c6-4909-9645-680086d68e1b",
+    "Amount": 1000,
     "CategoryId": "22aef787-2c8c-4085-9534-86d886cce4c0",
-    "TransactionTime": "2024-07-31T09:17:09.662Z"
+    "TransactionTime": "2024-08-06T19:00:03.3161092+05:30"
+  },
+  {
+    "TransactionId": "96f89626-90eb-4f28-9fce-8ed4569186e2",
+    "Amount": 100,
+    "CategoryId": "d7b0ab39-28f4-4c2a-a26e-a9a11e68aed6",
+    "TransactionTime": "2024-08-06T19:00:17.6881882+05:30"
+  },
+  {
+    "TransactionId": "6876e73d-b878-4a07-8ca3-bcc67228faeb",
+    "Amount": 500,
+    "CategoryId": "326b142c-74d0-4e0e-adfb-3dbe107b3ebc",
+    "TransactionTime": "2024-08-06T19:00:28.643972+05:30"
+  },
+  {
+    "TransactionId": "e124ff08-1386-4004-8b8c-3f3ddc3685c5",
+    "Amount": 1000,
+    "CategoryId": "5a385c3e-98f9-4c93-97a0-307bcf0d0acf",
+    "TransactionTime": "2024-08-06T19:00:42.0450051+05:30"
+  },
+  {
+    "TransactionId": "d107ad76-88f5-421c-8629-e43f59700b37",
+    "Amount": 500,
+    "CategoryId": "f765f955-4af3-4791-b904-07fa04a93cc7",
+    "TransactionTime": "2024-08-06T19:00:50.2433374+05:30"
+  },
+  {
+    "TransactionId": "c6ada42d-cae0-4df7-970e-edc3723e2ff2",
+    "Amount": 600,
+    "CategoryId": "f765f955-4af3-4791-b904-07fa04a93cc7",
+    "TransactionTime": "2024-08-06T19:01:10.6744237+05:30"
+  },
+  {
+    "TransactionId": "492263ec-e2b3-4b75-b9ca-ebad83eab445",
+    "Amount": 300,
+    "CategoryId": "326b142c-74d0-4e0e-adfb-3dbe107b3ebc",
+    "TransactionTime": "2024-08-06T19:01:22.7919678+05:30"
+  },
+  {
+    "TransactionId": "1aaf2508-4ca7-4d72-8d91-fef6bb5934ee",
+    "Amount": 200,
+    "CategoryId": "326b142c-74d0-4e0e-adfb-3dbe107b3ebc",
+    "TransactionTime": "2024-08-06T20:34:48.8444241+05:30"
   }
 ]

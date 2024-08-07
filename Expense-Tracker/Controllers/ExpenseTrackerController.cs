@@ -14,7 +14,7 @@ namespace Expense_Tracker.Controllers
         private readonly IDispatcher _dispatcher;
         public ExpenseTrackerController(IDispatcher dispatcher)
         {
-                _dispatcher = dispatcher;
+            _dispatcher = dispatcher;
         }
 
         [HttpGet("transactions/get")]
@@ -29,7 +29,7 @@ namespace Expense_Tracker.Controllers
         public async Task<IActionResult> AddTransaction([FromBody] AddTransactionCommand command)
         {
             await _dispatcher.DispatchAsync(command);
-            return CreatedAtAction(nameof(AddTransaction), new {id=command.TransactionId});
+            return CreatedAtAction(nameof(AddTransaction), new { });
         }
 
         [HttpGet("categories/get")]
@@ -43,12 +43,13 @@ namespace Expense_Tracker.Controllers
         public async Task<IActionResult> AddCategory([FromBody] AddCategoryCommand command)
         {
             await _dispatcher.DispatchAsync(command);
-            return CreatedAtAction(nameof(AddCategory), new { id = command.CategoryId });
+            return CreatedAtAction(nameof(AddCategory), new { });
         }
 
-        [HttpDelete("category/delete")]
-        public async Task<IActionResult> DeleteCategoryById([FromBody] DeleteCategoryCommand command)
+        [HttpDelete("category/delete/{categoryId}")]
+        public async Task<IActionResult> DeleteCategoryById(Guid categoryId)
         {
+            DeleteCategoryCommand command = new() { CategoryId = categoryId};
             await _dispatcher.DispatchAsync(command);
             return Ok();
         }

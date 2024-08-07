@@ -2,13 +2,43 @@
   {
     "CategoryId": "d7b0ab39-28f4-4c2a-a26e-a9a11e68aed6",
     "CategoryName": "Travel",
-    "Type": "Expense",
-    "CreatedAt": "2024-07-31T06:11:20.636Z"
+    "CreatedAt": "2024-07-31T06:11:20.636Z",
+    "Type": "Expense"
   },
   {
     "CategoryId": "22aef787-2c8c-4085-9534-86d886cce4c0",
     "CategoryName": "Salary",
-    "Type": "Income",
-    "CreatedAt": "2024-07-31T06:11:20.636Z"
+    "CreatedAt": "2024-07-31T06:11:20.636Z",
+    "Type": "Income"
+  },
+  {
+    "CategoryId": "f765f955-4af3-4791-b904-07fa04a93cc7",
+    "CategoryName": "Freelance",
+    "CreatedAt": "0001-01-01T00:00:00",
+    "Type": "Income"
+  },
+  {
+    "CategoryId": "5a385c3e-98f9-4c93-97a0-307bcf0d0acf",
+    "CategoryName": "Rent",
+    "CreatedAt": "0001-01-01T00:00:00",
+    "Type": "Expense"
+  },
+  {
+    "CategoryId": "326b142c-74d0-4e0e-adfb-3dbe107b3ebc",
+    "CategoryName": "Shopping",
+    "CreatedAt": "0001-01-01T00:00:00",
+    "Type": "Expense"
+  },
+  {
+    "CategoryId": "6e376ba4-01fa-4e79-aedd-97881e935cab",
+    "CategoryName": "Fiver",
+    "CreatedAt": "0001-01-01T00:00:00",
+    "Type": "Income"
+  },
+  {
+    "CategoryId": "872e0edc-f2df-4cab-9cf4-773be40c845e",
+    "CategoryName": "Fuel",
+    "CreatedAt": "2024-08-06T20:35:10.2726925+05:30",
+    "Type": "Expense"
   }
 ]

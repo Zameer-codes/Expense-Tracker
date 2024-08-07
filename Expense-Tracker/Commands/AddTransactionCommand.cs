@@ -5,8 +5,10 @@ using Expense_Tracker.Repositories;
 
 namespace Expense_Tracker.Commands
 {
-    public class AddTransactionCommand: TransactionModel, ICommand
+    public class AddTransactionCommand: ICommand
     {
+        public int Amount { get; set; }
+        public Guid CategoryId { get; set; }
     }
 
     public class AddTransactionCommandHandler : ICommandHandler<AddTransactionCommand>

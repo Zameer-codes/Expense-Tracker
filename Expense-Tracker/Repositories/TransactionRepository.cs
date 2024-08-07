@@ -21,6 +21,7 @@ namespace Expense_Tracker.Repositories
         {
             List<TransactionModel> Transactions = await ReadAllFileData<TransactionModel>(FilePaths.TransactionFile);
             transaction.TransactionId = Guid.NewGuid();
+            transaction.TransactionTime = DateTime.Now;
             Transactions.Add(transaction);
             var modifiedJson = JsonSerializer.Serialize(Transactions, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(FilePaths.TransactionFile, modifiedJson);
@@ -30,6 +31,7 @@ namespace Expense_Tracker.Repositories
         {
             List<CategoryModel> Categories = await ReadAllFileData<CategoryModel>(FilePaths.CategoryFile);
             category.CategoryId = Guid.NewGuid();
+            category.CreatedAt = DateTime.Now;
             Categories.Add(category);
             var modifiedJson = JsonSerializer.Serialize(Categories, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(FilePaths.CategoryFile, modifiedJson);
